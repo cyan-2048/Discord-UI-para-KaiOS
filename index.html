@@ -6,15 +6,56 @@
 		<meta name="theme-color" content="#36393f" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="css/pages.css" />
-		<link rel="stylesheet" href="css/list.css" />
+		<link rel="stylesheet" href="css/chlist.css" />
+		<link rel="stylesheet" href="css/chview.css" />
+		<link rel="stylesheet" href="css/srvrs.css" />
 		<script src="js/app.js" defer></script>
 		<title>Discordo</title>
 	</head>
 	<body>
+		<div id="srvrs"></div>
+		<!-- important!! don't remove elements when not used,
+			 best to just remove children not parents and ofc take into consideration
+			the animations which is .5s delay -->
+		<div id="chlist">
+			<div class="separator">direct messages</div>
+			<div aria-type="dm" mentioned="true" tabindex="-1" channel="2048">
+				<div aria-mentions="2048"></div>
+				<div class="avatar" status="offline"></div>
+				<div class="text">Cyan</div>
+			</div>
+			<div aria-type="dm" tabindex="-1" channel="2006">
+				<div aria-mentions="0"></div>
+				<div class="avatar" status="idle"></div>
+				<div class="subtext">Merry Christmas everyone!</div>
+				<div class="text">iGameEveryDay06</div>
+			</div>
+			<div aria-type="dm" tabindex="-1" channel="128">
+				<div aria-mentions="0"></div>
+				<div class="avatar" status="online"></div>
+				<div class="text">Frank128</div>
+			</div>
+			<div aria-type="dm" tabindex="-1" channel="256">
+				<div aria-mentions="0"></div>
+				<div class="avatar" status="online"></div>
+				<div class="text">Steve256</div>
+			</div>
+			<div aria-type="dm" tabindex="-1" channel="2042">
+				<div aria-mentions="0"></div>
+				<div class="avatar" status="mobile_online"></div>
+				<div class="text">Cyan's alt wen Kaicord release</div>
+			</div>
+			<div aria-type="dm" tabindex="-1" channel="1282456">
+				<div aria-mentions="0"></div>
+				<div class="avatar" status="online"></div>
+				<div class="subtext">3 Members</div>
+				<div class="text">Discord4KaiOS</div>
+			</div>
+		</div>
 		<div id="chview">
 			<header>
-				<span id="status"></span>
-				<span id="chname">Loading...</span>
+				<span status="mobile_online"></span>
+				<span id="chname">Cyan</span>
 			</header>
 			<div id="composer">
 				<div id="message_container" tabindex="-1">
@@ -196,6 +237,7 @@
 					</div>
 				</div>
 				<div id="writer">
+					<!-- if this is focused SoftRight is send if message container it is Enter -->
 					<div id="writert" contenteditable="true"><br /></div>
 				</div>
 			</div>

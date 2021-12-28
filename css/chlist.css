@@ -1,0 +1,148 @@
+#chlist,
+#srvrs {
+	top: 0;
+	left: 0;
+	height: 100vh;
+}
+
+#chlist {
+	background-color: var(--chlist-bkgrnd);
+	overflow: auto;
+	/* background-image: url('https://cdn.discordapp.com/attachments/922620490701484082/925241040808591430/unknown.png'); */
+}
+
+:focus {
+	outline: none;
+}
+
+#chlist .separator {
+	line-height: 3rem;
+	height: 3rem;
+	padding: 0 1rem 0 1.7rem;
+	font-size: 1.3rem;
+	font-weight: bold;
+	background: transparent;
+	color: var(--chview-frgrnd);
+	text-transform: uppercase;
+	letter-spacing: -0.04rem;
+}
+
+#chlist [channel][aria-type='dm'] {
+	height: 4.2rem;
+	width: calc(100vw - 2rem);
+	margin-left: 1rem;
+	border-radius: 5px;
+	position: relative;
+	margin-bottom: 0.2rem;
+}
+
+#chlist [channel]:focus {
+	background: rgba(79, 84, 92, 0.32);
+}
+
+#chlist [channel]:focus * {
+	color: white !important;
+}
+
+#chlist [channel][aria-type='dm'] .avatar {
+	width: 3.2rem;
+	height: 3.2rem;
+	background-image: var(--default-avatr);
+	background-size: contain;
+	border-radius: 50%;
+	position: absolute;
+	top: 0.5rem;
+	left: 0.5rem;
+}
+
+#chlist [channel][aria-type='dm'] .text {
+	position: absolute;
+	font-size: 1.5rem;
+	color: var(--text-no-mesgs);
+	top: 1.05rem;
+	left: 5rem;
+	font-weight: 600;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	width: calc(100vw - 8rem);
+}
+
+#chlist [channel][aria-type='dm'] [aria-mentions] {
+	display: none;
+	position: absolute;
+	border-radius: 0.8rem;
+	background-color: var(--color-of-ping);
+	color: white;
+	height: 1.6rem;
+	width: fit-content;
+	padding: 0.5rem;
+	line-height: 0.6rem;
+	right: 1rem;
+	top: 1.2rem;
+}
+
+[aria-mentions]:not([aria-mentions='0']) {
+	display: block !important;
+}
+
+[aria-mentions]::after {
+	content: attr(aria-mentions);
+}
+
+#chlist [channel][aria-type='dm'] .subtext {
+	position: absolute;
+	color: var(--text-no-mesgs);
+	bottom: 0.6rem;
+	left: 5rem;
+	font-size: 1.1rem;
+}
+
+#chlist [channel][aria-type='dm'] .subtext + .text {
+	top: 0.3rem !important;
+}
+
+#chlist [channel][aria-type='dm'][mentioned='true'] * {
+	color: white;
+}
+
+[status]::after {
+	content: '';
+	position: absolute;
+	background-size: 1.1rem;
+	background-repeat: no-repeat;
+	background-position: 2.9px;
+	width: 1.6rem;
+	height: 1.6rem;
+	border-radius: 50%;
+	bottom: 0;
+	right: 0;
+}
+
+#chlist [status]::after {
+	background-color: var(--chlist-bkgrnd);
+}
+
+[status='online']::after {
+	background-image: url('/css/status/online.png');
+}
+
+[status='idle']::after {
+	background-image: url('/css/status/idle.png');
+}
+[status='dnd']::after {
+	background-image: url('/css/status/dnd.png');
+}
+
+[status='mobile_online']::after {
+	background-image: url('/css/status/mobile_online.png');
+}
+
+#chlist [status='mobile_online']::after {
+	height: 2rem;
+	border-radius: 23%;
+}
+
+[status='offline']::after {
+	background-image: url('/css/status/offline.png');
+}

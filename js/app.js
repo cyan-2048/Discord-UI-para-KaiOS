@@ -74,3 +74,17 @@ function changeSoftKeys(arr) {
 	d[qs]('footer .center').innerHTML = arr[1];
 	d[qs]('footer .right').innerHTML = arr[2];
 }
+
+function switchPages(g) {
+	for (let a of document.querySelectorAll('#chview,#chlist,#srvrs')) {
+		a.classList.remove('selected');
+	}
+
+	document.querySelector('#' + g).className = 'selected';
+
+	if (g == 'chview') {
+		setTimeout(() => {
+			document.querySelector('#writert').focus();
+		}, 500);
+	}
+}
