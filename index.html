@@ -13,18 +13,97 @@
 		<title>Discordo</title>
 	</head>
 	<body>
-		<div id="srvrs"></div>
+		<div id="srvrs">
+			<div
+				class="server-icon selected"
+				tabindex="-1"
+				aria-mentions="1"
+				role="dms"
+			></div>
+
+			<div class="servers">
+				<div
+					class="server-icon"
+					unread=""
+					aria-mentions="0"
+					tabindex="-1"
+					style="
+						--server_url: url('https://cdn.discordapp.com/icons/804887072900382782/86b09a82e64eefd72b8f70c7e9f95784.png?size=48');
+					"
+				></div>
+				<div
+					class="server-icon"
+					unread=""
+					aria-mentions="4"
+					tabindex="-1"
+					style="
+						--server_url: url('https://cdn.discordapp.com/icons/920067277997633577/ec097d9e4b3d5eebc15d4e58a22d72fb.png?size=48');
+					"
+				></div>
+				<div
+					class="server-icon"
+					unread=""
+					aria-mentions="2048"
+					tabindex="-1"
+					style="
+						--server_url: url('https://cdn.discordapp.com/icons/810729189064835093/524dcf44094857be8c720d49ddc94049.png?size=48');
+					"
+				></div>
+				<div
+					class="server-icon"
+					aria-mentions="0"
+					tabindex="-1"
+					style="
+						--server_url: url('https://cdn.discordapp.com/icons/472006912846594048/b911c33b7024f3ec4d653b7b3eca3cf6.png?size=48');
+					"
+				></div>
+
+				<!-- folders work by toggling the aria-hidden boolean -->
+				<div
+					class="server-folder"
+					aria-mentions="7"
+					tabindex="-1"
+					aria-hidden="false"
+				>
+					<div class="server-folder-icon" tabindex="-1"></div>
+					<div
+						aria-mentions="3"
+						unread=""
+						tabindex="-1"
+						class="server-icon no_icon"
+					>
+						yes3
+					</div>
+					<div
+						aria-mentions="4"
+						unread=""
+						tabindex="-1"
+						class="server-icon no_icon"
+					>
+						hai
+					</div>
+					<div aria-mentions="0" tabindex="-1" class="server-icon no_icon">
+						fold
+					</div>
+				</div>
+			</div>
+		</div>
 		<!-- important!! don't remove elements when not used,
 			 best to just remove children not parents and ofc take into consideration
 			the animations which is .5s delay -->
 		<div id="chlist">
+			<!-- 
+			  /////////////////////////////////////////////////////
+				/////////////    DIRECT MESSAGES    ////////////////
+				///////////////////////////////////////////////////
+
 			<div class="separator">direct messages</div>
-			<div aria-type="dm" mentioned="true" tabindex="-1" channel="2048">
+			<div aria-type="dm" unread="" tabindex="-1" channel="2048">
 				<div aria-mentions="2048"></div>
 				<div class="avatar" status="offline"></div>
 				<div class="text">Cyan</div>
 			</div>
-			<div aria-type="dm" tabindex="-1" channel="2006">
+			<div aria-type="dm" muted="" tabindex="-1" channel="2006">
 				<div aria-mentions="0"></div>
 				<div class="avatar" status="idle"></div>
 				<div class="subtext">Merry Christmas everyone!</div>
@@ -50,6 +129,34 @@
 				<div class="avatar" status="online"></div>
 				<div class="subtext">3 Members</div>
 				<div class="text">Discord4KaiOS</div>
+			</div> 
+		-->
+
+			<div class="separator">text channels</div>
+			<div aria-type="text" unread="" tabindex="-1" channel="1282456">
+				<div aria-mentions="983983"></div>
+				<div class="text">vm-rules</div>
+			</div>
+			<div aria-type="announce" tabindex="-1" channel="1282456">
+				<div aria-mentions="0"></div>
+				<!-- aria mentions element is optional if no mentions -->
+				<div class="text">updates</div>
+			</div>
+			<div aria-type="limited" tabindex="-1" channel="1282456">
+				<div aria-mentions="0"></div>
+				<div class="text">general</div>
+			</div>
+			<div aria-type="text" tabindex="-1" unread="" channel="1282456">
+				<div aria-mentions="0"></div>
+				<div class="text">bot-testing</div>
+			</div>
+			<div aria-type="text" muted="" tabindex="-1" channel="1282456">
+				<div aria-mentions="0"></div>
+				<div class="text">bot-spam-1</div>
+			</div>
+			<div aria-type="text" muted="" tabindex="-1" channel="1282456">
+				<div aria-mentions="0"></div>
+				<div class="text">bot-spam-2</div>
 			</div>
 		</div>
 		<div id="chview">
@@ -73,7 +180,15 @@
 							Yes a test
 						</div>
 						<div id="msg924904906631028776" class="message-indiv">
-							Ofc yes this is a test
+							Yes EMOJI IN B
+							<div
+								class="emoji"
+								style="
+									--emoji_url: url('https://cdn.discordapp.com/emojis/839607707244691467.png?size=16');
+								"
+							></div>
+							T WEEN
+							SHJSHJAKJSHKASHKSHAKJHSKJAHKJSHKAJHSKJHASJHSKJHAKSHAHSJHSJAHSJHSKAJHSJASHKJAHSJASHJSHJAKSHJAHJSHJAHSKJAHSJSAHKJSHKJAHSKHAJHAKJSHJASHKSJHAJSHKJASSK
 						</div>
 					</div>
 					<div

@@ -5,7 +5,7 @@
 	--chview-frgrnd: #dcddde;
 	--chview-shadow: #2c2f32;
 	--chlist-bkgrnd: #2f3136;
-	--chlist-select: rgba(79, 84, 92, 0.32);
+	--chlist-select: #393c42;
 	--text-no-mesgs: #72767d;
 	/* text with pings or messages is white */
 	--text-if-muted: #4f545c;
@@ -42,7 +42,7 @@ body {
 	z-index: 1;
 }
 #chlist {
-	transform: translateX(-24rem);
+	left: -100vw !important;
 	z-index: 2;
 }
 #srvrs {
@@ -51,15 +51,15 @@ body {
 }
 
 #chlist.selected {
-	transform: none;
+	transform: translateX(100vw);
 }
 
 #chlist.selected + #chview {
-	transform: translateX(12rem);
+	transform: translateX(50vw);
 }
 
 #srvrs.selected + #chlist {
-	transform: translateX(7.2rem);
+	transform: translateX(calc(7.2rem + 100vw));
 }
 
 #srvrs.selected {

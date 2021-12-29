@@ -8,7 +8,6 @@
 #chlist {
 	background-color: var(--chlist-bkgrnd);
 	overflow: auto;
-	/* background-image: url('https://cdn.discordapp.com/attachments/922620490701484082/925241040808591430/unknown.png'); */
 }
 
 :focus {
@@ -29,19 +28,54 @@
 
 #chlist [channel][aria-type='dm'] {
 	height: 4.2rem;
+}
+
+#chlist [channel] {
 	width: calc(100vw - 2rem);
 	margin-left: 1rem;
 	border-radius: 5px;
 	position: relative;
 	margin-bottom: 0.2rem;
+	color: var(--text-no-mesgs);
+}
+
+#chlist [channel]:not([aria-type='dm']) {
+	height: 3.2rem;
 }
 
 #chlist [channel]:focus {
-	background: rgba(79, 84, 92, 0.32);
+	background: var(--chlist-select);
 }
 
+#chlist [channel][unread] *,
+#chlist [channel]:focus,
 #chlist [channel]:focus * {
 	color: white !important;
+	opacity: 1 !important;
+}
+
+#chlist [channel][unread]:not([aria-type='dm'])::before,
+#chlist [channel][unread]:not([aria-type='dm'])::before {
+	position: absolute;
+	content: '';
+	width: 1rem;
+	height: 1rem;
+	background-color: white;
+	top: 1rem;
+	left: -1.5rem;
+	border-radius: 50%;
+}
+
+#chlist [channel]:not([aria-type='dm']) .text {
+	font-weight: 600;
+	position: absolute;
+	left: 3.2rem;
+	font-size: 1.4rem;
+	top: 0.55rem;
+	width: calc(100vw - 6rem);
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
 }
 
 #chlist [channel][aria-type='dm'] .avatar {
@@ -53,6 +87,10 @@
 	position: absolute;
 	top: 0.5rem;
 	left: 0.5rem;
+}
+
+#chlist [channel][aria-type='dm']:focus [status]::after {
+	background-color: var(--chlist-select);
 }
 
 #chlist [channel][aria-type='dm'] .text {
@@ -68,7 +106,28 @@
 	width: calc(100vw - 8rem);
 }
 
-#chlist [channel][aria-type='dm'] [aria-mentions] {
+#chlist [channel][aria-type='text'] {
+	background-image: url('channels/text.png');
+}
+#chlist [channel][aria-type='announce'] {
+	background-image: url('channels/announce.png');
+}
+#chlist [channel][aria-type='limited'] {
+	background-image: url('channels/limited.png');
+}
+
+#chlist [channel]:not([aria-type='dm']) {
+	background-size: 2rem;
+	background-position: 0.6rem center;
+	background-repeat: no-repeat;
+}
+
+#chlist [channel][muted] {
+	opacity: 0.7;
+	color: var(--text-if-muted);
+}
+
+#chlist [channel] [aria-mentions] {
 	display: none;
 	position: absolute;
 	border-radius: 0.8rem;
@@ -79,7 +138,7 @@
 	padding: 0.5rem;
 	line-height: 0.6rem;
 	right: 1rem;
-	top: 1.2rem;
+	top: 0.8rem;
 }
 
 [aria-mentions]:not([aria-mentions='0']) {
@@ -100,10 +159,6 @@
 
 #chlist [channel][aria-type='dm'] .subtext + .text {
 	top: 0.3rem !important;
-}
-
-#chlist [channel][aria-type='dm'][mentioned='true'] * {
-	color: white;
 }
 
 [status]::after {

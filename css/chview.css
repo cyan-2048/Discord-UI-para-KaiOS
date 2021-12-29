@@ -126,6 +126,10 @@
 	flex: 1 1 auto;
 }
 
+#composer .message {
+	word-wrap: break-word;
+}
+
 #chview footer {
 	bottom: 0;
 }
@@ -194,4 +198,20 @@ footer .right {
 	footer.icon {
 		grid-template-columns: 13.8rem 2.4rem 13.8rem;
 	}
+}
+
+.emoji {
+	position: relative;
+	width: 16px;
+	height: 16px;
+	display: inline-block;
+}
+
+.emoji::after {
+	content: '';
+	position: absolute;
+	background-image: var(--emoji_url);
+	width: 16px;
+	height: 16px;
+	top: 0.3rem;
 }
